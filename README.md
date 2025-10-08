@@ -21,17 +21,20 @@ Bu proje, FHEVM (Fully Homomorphic Encryption Virtual Machine) üzerinde çalı�
 ## 🛠️ Kurulum
 
 1. **Projeyi klonlayın:**
+
    ```bash
    git clone <repository-url>
    cd fhevm-starter-hardhat
    ```
 
 2. **Bağımlılıkları yükleyin:**
+
    ```bash
    npm install
    ```
 
 3. **Environment dosyasını oluşturun:**
+
    ```bash
    cp .env.example .env
    ```
@@ -42,6 +45,7 @@ Bu proje, FHEVM (Fully Homomorphic Encryption Virtual Machine) üzerinde çalı�
 ## 🔧 Kullanım
 
 ### Kontratları Derleme
+
 ```bash
 npm run build
 # veya
@@ -49,6 +53,7 @@ npx hardhat compile
 ```
 
 ### Testleri Çalıştırma
+
 ```bash
 npm test
 # veya
@@ -56,11 +61,13 @@ npx hardhat test
 ```
 
 ### Test Coverage
+
 ```bash
 npm run coverage
 ```
 
 ### Yerel Ağ Başlatma
+
 ```bash
 npm run node
 # veya
@@ -70,6 +77,7 @@ npx hardhat node
 ### Deployment
 
 #### Yerel Ağa Deploy
+
 ```bash
 npm run deploy:local
 # veya
@@ -77,6 +85,7 @@ npx hardhat run scripts/deploy.ts --network localhost
 ```
 
 #### Test Ağına Deploy
+
 ```bash
 npm run deploy:dev
 # veya
@@ -84,6 +93,7 @@ npx hardhat run scripts/deploy.ts --network dev
 ```
 
 ### Kontrat ile Etkileşim
+
 ```bash
 npm run interact
 # veya

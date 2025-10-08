@@ -8,11 +8,13 @@ async function main() {
     // Check environment variables
     const privateKey = process.env.PRIVATE_KEY;
     const rpcUrl = process.env.RPC_URL;
-    
+
     if (!privateKey) {
-      throw new Error("❌ PRIVATE_KEY environment variable is not set. Please check your network configuration and private key.");
+      throw new Error(
+        "❌ PRIVATE_KEY environment variable is not set. Please check your network configuration and private key.",
+      );
     }
-    
+
     if (!rpcUrl) {
       console.log("⚠️  RPC_URL not set, using default localhost");
     }
@@ -20,7 +22,9 @@ async function main() {
     // Get the deployer account
     const signers = await ethers.getSigners();
     if (signers.length === 0) {
-      throw new Error("❌ No signers available for deployment. Please check your network configuration and private key.");
+      throw new Error(
+        "❌ No signers available for deployment. Please check your network configuration and private key.",
+      );
     }
     const deployer = signers[0]!; // Non-null assertion since we checked length above
     console.log("📝 Deploying with account:", deployer.address);
