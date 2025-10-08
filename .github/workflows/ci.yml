@@ -109,6 +109,16 @@ jobs:
           RPC_URL: ${{ secrets.TESTNET_RPC_URL }}
         run: |
           echo "Deploying to testnet..."
+          echo "Checking environment variables..."
+          if [ -z "$PRIVATE_KEY" ]; then
+            echo "❌ TESTNET_PRIVATE_KEY secret is not set"
+            exit 1
+          fi
+          if [ -z "$RPC_URL" ]; then
+            echo "❌ TESTNET_RPC_URL secret is not set"
+            exit 1
+          fi
+          echo "✅ Environment variables are set"
           npx hardhat run scripts/deploy.ts --network dev
 
       - name: Verify deployment
