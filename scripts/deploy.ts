@@ -7,10 +7,12 @@ async function main() {
   try {
     // Get the deployer account
     const signers = await ethers.getSigners();
-    const deployer = signers[0];
-    if (!deployer) {
-      throw new Error("❌ No signer available for deployment");
+    if (signers.length === 0) {
+      throw new Error(
+        "❌ No signers available for deployment. Please check your network configuration and private key.",
+      );
     }
+    const deployer = signers[0]!; // Non-null assertion since we checked length above
     console.log("📝 Deploying with account:", deployer.address);
 
     // Check deployer balance
